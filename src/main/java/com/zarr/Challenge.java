@@ -78,7 +78,7 @@ public class Challenge {
 			}
 		}).withSideInputs(dataKeys)).apply("Make elements strings to write them", MapElements.into(strings()).via(String::valueOf));
 
-		filtered.apply(TextIO.write().to(filesPath).withSuffix(".filtered"));
+		filtered.apply(TextIO.write().to(filesPath).withoutSharding().withSuffix(".filtered"));
 
 		if(deletion){
 			DeleteFileAnRenameResult(filesPath);
@@ -99,7 +99,7 @@ public class Challenge {
 		PCollection<Integer> differenceAll = PCollectionList.of(data).and(dataKeys).apply("Transform using Sets transform", Sets.exceptAll());
 
 		differenceAll.apply("Make elements strings to write them", MapElements.into(strings()).via(String::valueOf))
-				.apply(TextIO.write().to(filesPath).withSuffix(".filtered"));
+				.apply(TextIO.write().to(filesPath).withoutSharding().withSuffix(".filtered"));
 
 		if(deletion){
 			DeleteFileAnRenameResult(filesPath);

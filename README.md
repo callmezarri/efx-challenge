@@ -53,11 +53,11 @@ are less
 
 ## Why not open all files based on patterns
 
-I did this and discarded it because it was less space efficient for the machine I was using, in an implementation with 
-a new idea, is function not used in the code. 
+I did this and discarded it because it was less space efficient for the machine I was using. I attempted an implementation with 
+a new idea, is function not used in the code but the skeleton is there. 
 
 This idea was to group all values
-to match files in a KV<String, String> where the first String is a line in the file and the second is the filename,
+to match files in a `KV<String, String>` where the first `String` is a line in the file and the second is the filename,
 with this approach I was planning on remove multiple repetitions of keys across all csv files
 
 ## Improvements

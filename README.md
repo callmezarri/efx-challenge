@@ -62,11 +62,11 @@ with this approach I was planning on remove multiple repetitions of keys across 
 
 ## Improvements
 - Consider using a more efficient data structure like a bloom filter for lookUps,
-  - the problem here is dealing with false positives, so if correctness is a constraint, it should be used alongside structure
-- Implement the full idea of multiple with efficient key deletion alongside a more efficient data structure for lookUps
+  - the problem here is dealing with false positives, so if correctness is a constraint, it should be used alongside another structure for lookUps
+- Implement the full idea of multiple file with efficient key deletion, alongside a more efficient data structure for lookUps
 
 ## Update
-I was able to run the code in my main machine with bigger files size and the CPU utilization improved about 1GB for each
+I was able to run the code in my main machine with bigger files size and the CPU utilization improved. About 1GB for each
 file
 
 ![1bg files](1GBFiles.png)
